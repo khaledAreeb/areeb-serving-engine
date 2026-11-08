@@ -1,0 +1,36 @@
+# Python environment and build outputs
+.venv/
+__pycache__/
+*.py[cod]
+build/
+dist/
+*.egg-info/
+
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Datasets, imported sessions and manifests live outside Git (dataset terms, size)
+data/
+
+# Benchmark outputs: exports, logs, telemetry, reports
+artifacts/
+
+# Plan files written with `engine-bench plan --out`
+*.plan.json
+
+# Secrets are referenced by environment variable name only; never commit env files
+.env
+.env.*
+
+# Personal Claude Code settings and editor temp files (shared skills/commands stay trackable)
+.claude/settings.local.json
+.claude/*.tmp.*
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store

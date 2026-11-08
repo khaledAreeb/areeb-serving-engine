@@ -2,13 +2,13 @@
 
 ## 1. Project setup
 
-- [ ] 1.1 Run `git init` at the project root and commit the existing `docs/` and `openspec/` as the initial commit; verify that `git log --oneline` shows one commit and `git status` lists no tracked changes
-- [ ] 1.2 Create `pyproject.toml` (package `engine-bench`, src layout, `requires-python = ">=3.11"`, console script `engine-bench`), add runtime deps (pydantic v2, typer, ruamel.yaml, structlog) and dev deps (pytest, ruff, mypy), then run `uv lock` and `uv sync`; verify that `uv run engine-bench --help` prints the command list
-- [ ] 1.3 Configure ruff (target `py311`), mypy (strict, `python_version = "3.11"`) and pytest in `pyproject.toml`; verify that `uv run ruff check`, `uv run mypy src` and `uv run pytest` all run cleanly on the empty package
-- [ ] 1.4 Add `.gitignore` covering `.venv/`, `data/`, `artifacts/`, caches and `*.plan.json` outputs; verify that `git check-ignore data/x artifacts/x .venv/x` matches all three
-- [ ] 1.5 Create `src/engine_bench/__init__.py`, `cli.py` (Typer app with explicit exit-code mapping 0/1/2) and `logging.py` (structlog: JSON when not a TTY, console otherwise); verify with tests that a usage error exits 2 and that logging emits JSON under a captured non-TTY stream
-- [ ] 1.6 Create `docs/tool-versions.md` listing every unverified external fact this change depends on (engine fairness flags, flush endpoints, fixed-length output method, AIPerf loader names and loader parameters, WildChat field names), each marked TODO-verify with the change that will verify it; verify that the file exists and that every item in design D7, D10 and D12 appears in it
-- [ ] 1.7 Commit group 1 ("project setup"); verify that `git status` is clean and `git log -1` shows the commit
+- [x] 1.1 Run `git init` at the project root and commit the existing `docs/` and `openspec/` as the initial commit; verify that `git log --oneline` shows one commit and `git status` lists no tracked changes
+- [x] 1.2 Create `pyproject.toml` (package `engine-bench`, src layout, `requires-python = ">=3.11"`, console script `engine-bench`), add runtime deps (pydantic v2, typer, ruamel.yaml, structlog) and dev deps (pytest, ruff, mypy), then run `uv lock` and `uv sync`; verify that `uv run engine-bench --help` prints the command list
+- [x] 1.3 Configure ruff (target `py311`), mypy (strict, `python_version = "3.11"`) and pytest in `pyproject.toml`; verify that `uv run ruff check`, `uv run mypy src` and `uv run pytest` all run cleanly on the empty package
+- [x] 1.4 Add `.gitignore` covering `.venv/`, `data/`, `artifacts/`, caches and `*.plan.json` outputs; verify that `git check-ignore data/x artifacts/x .venv/x` matches all three
+- [x] 1.5 Create `src/engine_bench/__init__.py`, `cli.py` (Typer app with explicit exit-code mapping 0/1/2) and `logging.py` (structlog: JSON when not a TTY, console otherwise); verify with tests that a usage error exits 2 and that logging emits JSON under a captured non-TTY stream
+- [x] 1.6 Create `docs/tool-versions.md` listing every unverified external fact this change depends on (engine fairness flags, flush endpoints, fixed-length output method, AIPerf loader names and loader parameters, WildChat field names), each marked TODO-verify with the change that will verify it; verify that the file exists and that every item in design D7, D10 and D12 appears in it
+- [x] 1.7 Commit group 1 ("project setup"); verify that `git status` is clean and `git log -1` shows the commit
 
 ## 2. Canonical hashing
 
