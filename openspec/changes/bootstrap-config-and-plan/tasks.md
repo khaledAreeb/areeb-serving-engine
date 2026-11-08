@@ -12,8 +12,8 @@
 
 ## 2. Canonical hashing
 
-- [ ] 2.1 Implement `hashing.py`: canonical JSON (sorted keys, compact separators, UTF-8, NaN/Infinity rejected), SHA-256, a `hash_scheme: 1` field, and a 12-hex display prefix; verify with unit tests for key-order independence, NaN rejection, non-ASCII stability and golden digests for fixed inputs
-- [ ] 2.2 Commit group 2 ("canonical hashing") once its tests pass; verify that `git status` is clean
+- [x] 2.1 Implement `hashing.py`: canonical JSON (sorted keys, compact separators, UTF-8, NaN/Infinity rejected), SHA-256, a `hash_scheme: 1` field, and a 12-hex display prefix; verify with unit tests for key-order independence, NaN rejection, non-ASCII stability and golden digests for fixed inputs
+- [x] 2.2 Commit group 2 ("canonical hashing") once its tests pass; verify that `git status` is clean
 
 ## 3. Config schema and loading
 
