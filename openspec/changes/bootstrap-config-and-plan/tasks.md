@@ -17,8 +17,8 @@
 
 ## 3. Config schema and loading
 
-- [ ] 3.1 Implement `config/loader.py` on the ruamel.yaml round-trip loader, returning plain data plus a key-path→line map; verify with tests that duplicate keys at top level and nested levels raise errors with the key and line, and that YAML tags cannot construct objects
-- [ ] 3.2 Implement `RawExperiment` models in `config/schema.py` (`extra="forbid"`) for:
+- [x] 3.1 Implement `config/loader.py` on the ruamel.yaml round-trip loader, returning plain data plus a key-path→line map; verify with tests that duplicate keys at top level and nested levels raise errors with the key and line, and that YAML tags cannot construct objects
+- [x] 3.2 Implement `RawExperiment` models in `config/schema.py` (`extra="forbid"`) for:
   - the shared fairness block (including the load-generator version);
   - engine configs;
   - workloads, with declared identity fields, built-in loader name and loader parameters, and a **required** `output_mode` with no default;
@@ -28,7 +28,7 @@
   - an unknown key such as `slo.ttft_p59_ms` is rejected with its key path and line;
   - a workload without `output_mode` fails, naming the workload;
   - `output_mode: streaming` fails, listing the allowed values.
-- [ ] 3.3 Implement the resolver that produces a frozen `ResolvedExperiment`, with all defaults defined in one place, and that records the provenance (`default` or `config`) of every timing and estimate value. The defaults are:
+- [x] 3.3 Implement the resolver that produces a frozen `ResolvedExperiment`, with all defaults defined in one place, and that records the provenance (`default` or `config`) of every timing and estimate value. The defaults are:
   - SLO: 1500 / 60000 / 1500 / 0.01.
   - Timing: 60 s warm-up, 180 s target, 50 minimum completed requests, 900 s maximum; request timeout = deadline; drain timeout = request timeout.
   - Search: grid `[1,5,10,20]`, factor 2, cap 256, 3 refinement steps, resolution 0.10, fractions `[1.0,0.9,0.8]`, achieved ratio 0.95.
@@ -38,8 +38,8 @@
   Verify with tests that:
   - a config with no optional sections resolves to exactly these values, all with provenance `default`;
   - overriding `estimates.deployment_start_s` and `timing.warmup_s` changes only those values, with provenance `config`.
-- [ ] 3.4 Implement placeholder types (each field accepts only its own placeholder), 40-hex revision checks and `@sha256:` digest checks; verify with tests for a placeholder in the wrong field, `main` as a revision, and a tag-only image
-- [ ] 3.5 Commit group 3 ("config schema and loading") once its tests pass; verify that `git status` is clean
+- [x] 3.4 Implement placeholder types (each field accepts only its own placeholder), 40-hex revision checks and `@sha256:` digest checks; verify with tests for a placeholder in the wrong field, `main` as a revision, and a tag-only image
+- [x] 3.5 Commit group 3 ("config schema and loading") once its tests pass; verify that `git status` is clean
 
 ## 4. Validation rules and `validate` command
 
